@@ -44,15 +44,19 @@ public class LocalDatastore implements Datastore {
         return buildRecordSequence.incrementAndGet();
     }
 
-    @Override
-    public BuildConfigSetRecord saveBuildConfigSetRecord(BuildConfigSetRecord buildConfigSetRecord) {
+
+    //    @Override
+    public BuildConfigSetRecord saveBuildConfigSetRecord(BuildConfigSetRecord buildConfigSetRecord){
         buildConfigSetRecords.add(buildConfigSetRecord);
         return buildConfigSetRecord;
     }
 
-    @Override
+    //    @Override
     // TODO: to implement
     public BuildRecord storeBuildRecord(BuildRecord buildRecord, List<ProductMilestone> milestones) {
         return null;
     }
+
+    // TODO: to implement
+    public int getNextBuildConfigSetRecordId() {return 0;}
 }

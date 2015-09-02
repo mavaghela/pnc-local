@@ -9,7 +9,6 @@ import org.jboss.pnc.localbuilder.model.JSONBuildConfiguration;
 import org.jboss.pnc.localbuilder.parser.PncLocalCliOptions;
 import org.jboss.pnc.model.BuildConfiguration;
 import org.jboss.pnc.model.BuildConfigurationSet;
-import org.jboss.pnc.spi.datastore.DatastoreException;
 import org.jboss.pnc.spi.events.BuildSetStatusChangedEvent;
 import org.jboss.pnc.spi.events.BuildStatusChangedEvent;
 import org.jboss.weld.environment.se.bindings.Parameters;
@@ -61,9 +60,10 @@ public class LocalBuildRunner {
                 buildCoordinator.build(buildConfigurationSet, null);
             } catch (CoreException e) {
                 e.printStackTrace();
-            } catch (DatastoreException e) {
-                e.printStackTrace();
             }
+//            catch (DatastoreException e) {
+//                e.printStackTrace();
+//            }
         }
         else {
             System.err.println("Error: Configuration file is invalid");
